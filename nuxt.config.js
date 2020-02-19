@@ -25,6 +25,8 @@ export default {
   ** Global CSS
   */
   css: [
+    // Custom CSS classes for this project
+    '@/assets/css/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
