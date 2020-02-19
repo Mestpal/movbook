@@ -2,6 +2,7 @@
   <div>
     <div
       class="category"
+      @click="$emit('section', data)"
     >
       <h2 v-text='data.name'/>
     </div>
