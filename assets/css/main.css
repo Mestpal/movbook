@@ -1,10 +1,14 @@
 .category {
-    color:green;
-    background-color:aquamarine;
+    color:black;
+    background-color:whitesmoke;
     width: 28.3%;
     min-width:200px;
     height: auto;
     min-height:100px;
     margin: 10px 2.5%;
     float: left;
+}
+.category:hover{
+    color: black;
+    background-color: gray;
 }
