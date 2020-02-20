@@ -8,6 +8,7 @@
     margin: 10px 2.5%;
     float: left;
 }
+
 .category:hover{
     color: black;
     background-color: gray;
@@ -17,4 +18,16 @@
     min-height: 350px;
     min-width: 200px;
     max-width: 30%;
+}
+
+
+ul.contentDescription {
+    list-style-type: none;
+}
+
+ul.contentDescription li {
+    padding-bottom: 10px;
+}
+ul.contentDescription .contentListSecondLevel {
+    list-style-type: square;
 }
