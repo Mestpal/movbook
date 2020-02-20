@@ -12,3 +12,9 @@
     color: black;
     background-color: gray;
 }
+
+.movieListElement {
+    min-height: 150px;
+    min-width: 100px;
+    max-width: 30%;
+}
