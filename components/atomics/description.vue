@@ -39,7 +39,7 @@
         </ul>
         <li> Production companies: </li>
         <ul
-          v-if="contentData.production_companies.length"
+          v-if="contentData.production_companies && contentData.production_companies.length"
           class="contentListSecondLevel"
         >
           <li
