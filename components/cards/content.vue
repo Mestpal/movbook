@@ -1,10 +1,10 @@
 <template>
   <v-flex
     xs12
-    sm3
-    md3
-    lg4
-    xl4
+    sm6
+    md4
+    lg3
+    xl3
   >
     <v-card
       :class="'movieListElement'"
