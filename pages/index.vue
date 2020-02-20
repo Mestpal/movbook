@@ -21,9 +21,15 @@ export default {
   computed: {
     ...mapGetters('movieGenres', [
       'genres'
+    ]),
+    ...mapGetters('movieDBConfig', [
+      'configuration'
     ])
   },
   methods: {
+    ...mapActions('movieDBConfig', [
+      'getMovieDBConfig'
+    ]),
     ...mapActions('movieGenres', [
       'getFilmGenres',
       'updateSelectedGenre'
@@ -36,6 +42,11 @@ export default {
         this.getFilmGenres()
       }
     },
+    checkConfiguration () {
+      if (!Object.keys(this.configuration).length) {
+        this.getMovieDBConfig()
+      }
+    },
     openSection (event) {
       this.updateSelectedGenre(event)
       this.$router.push(`${event.name.toLowerCase()}`)
@@ -43,6 +54,7 @@ export default {
   },
   beforeMount () {
     this.resetMovieListData()
+    this.checkConfiguration()
   },
   mounted () {
     this.checkGenresStatus()

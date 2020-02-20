@@ -16,6 +16,7 @@
           v-for="(movie, index) in moviesList"
           :key="index"
           :data="movie"
+          :imgBase="configuration.images.base_url + configuration.images.poster_sizes[4]"
           @prepareContent="openContent($event)"
         />
       </v-layout>
@@ -37,6 +38,9 @@ export default {
     ]),
     ...mapGetters('moviesList', [
       'moviesList'
+    ]),
+    ...mapGetters('movieDBConfig', [
+      'configuration'
     ])
   },
   mounted () {
