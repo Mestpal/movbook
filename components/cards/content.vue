@@ -7,7 +7,7 @@
     xl3
   >
     <v-card
-      :class="'movieListElement fill-height repeating-gradient'"
+      :class="'fill-height repeating-gradient'"
       @click="$emit('prepareContent', data.id)"
       color="transparent"
     >
