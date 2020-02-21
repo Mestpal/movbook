@@ -4,9 +4,7 @@
   >
     <v-flex>
       <div>
-        <h1>
-          {{ $route.params.category }}
-        </h1>
+        <h1 v-text="categoryTitle"/>
       </div>
       <v-layout
         row
@@ -48,7 +46,10 @@ export default {
     ]),
     ...mapGetters('infiniteLoad', [
       'page'
-    ])
+    ]),
+    categoryTitle () {
+      return this.$route.params.category.toUpperCase()
+    }
   },
   mounted () {
     this.checkPageStatus()
