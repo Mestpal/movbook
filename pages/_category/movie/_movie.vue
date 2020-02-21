@@ -4,10 +4,12 @@
         <v-col
           cols="4"
         >
-          <v-card>
+          <v-card
+            :class="'repeating-gradient'"
+            color="transparent"
+          >
             <v-img
-              :src="configuration.images.base_url + configuration.images.poster_sizes[5] + movieData.poster_path"
-              :alt="movieData.title"
+              :src="imageSrc"
             />
           </v-card>
         </v-col>
@@ -38,7 +40,13 @@ export default {
   computed: {
     ...mapGetters('movieDBConfig', [
       'configuration'
-    ])
+    ]),
+    imageSrc () {
+      if (this.configuration.images.base_url && this.movieData.poster_path) {
+        return this.configuration.images.base_url + this.configuration.images.poster_sizes[5] + this.movieData.poster_path
+      }
+      return ''
+    }
   },
   methods: {
     async getMovieData () {
