@@ -6,7 +6,7 @@
         >
           <v-card>
             <v-img
-              :src="configuration.images.base_url + configuration.images.poster_sizes[4] + movieData.poster_path"
+              :src="configuration.images.base_url + configuration.images.poster_sizes[5] + movieData.poster_path"
               :alt="movieData.title"
             />
           </v-card>
