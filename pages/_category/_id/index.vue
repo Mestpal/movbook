@@ -43,22 +43,40 @@ export default {
     ...mapGetters('movieDBConfig', [
       'configuration'
     ]),
+    ...mapGetters('movieGenres', [
+      'selectedGenre'
+    ]),
     ...mapGetters('infiniteLoad', [
       'page'
     ])
   },
   mounted () {
+    this.checkPageStatus()
     this.checkMoviesListStatus()
   },
   methods: {
     ...mapActions('moviesList', [
-      'getMoviesList'
+      'getMoviesList',
+      'resetMovieListData'
+    ]),
+    ...mapActions('movieGenres', [
+      'updateSelectedGenre'
     ]),
     ...mapActions('infiniteLoad', [
       'updatePage'
     ]),
     openContent (id) {
       this.$router.push(`movie/${id}`)
+    },
+    checkPageStatus () {
+      if (this.selectedGenre !== this.$route.params.id) {
+        this.resetMovieListData()
+        this.updatePage(1)
+        this.updateSelectedGenre({
+          id: this.$route.params.id,
+          name: this.$route.params.category
+        })
+      }
     },
     checkMoviesListStatus () {
       if (!this.moviesList.length) {
