@@ -33,9 +33,6 @@ export default {
     MoviesListElement
   },
   computed: {
-    ...mapGetters('movieGenres', [
-      'selectedGenre'
-    ]),
     ...mapGetters('moviesList', [
       'moviesList'
     ]),
@@ -56,7 +53,7 @@ export default {
     checkMoviesListStatus () {
       if (!this.moviesList.length) {
         this.getMoviesList({
-          genreId: this.selectedGenre.id
+          genreId: this.$route.params.id
         })
       }
     }
