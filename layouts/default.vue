@@ -23,7 +23,7 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>&copy; {{ footerText }} </span>
     </v-footer>
   </v-app>
 </template>
@@ -32,25 +32,12 @@
 export default {
   data () {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
       title: 'Movbook'
+    }
+  },
+  computed: {
+    footerText () {
+      return `Manuel Estévez ${new Date().getFullYear()}`
     }
   }
 }
