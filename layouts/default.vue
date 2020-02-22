@@ -12,12 +12,7 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-toolbar-items>
-        <v-text-field
-          label="Search"
-          outlined
-          @input="saveSearch($event)"
-          @keypress.enter="launchSearch"
-        ></v-text-field>
+        <search />
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
@@ -34,34 +29,20 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import search from '@/components/atomics/search'
 
 export default {
   data () {
     return {
-      title: 'Movbook',
-      searchInput: ''
+      title: 'Movbook'
     }
+  },
+  components: {
+    search
   },
   computed: {
     footerText () {
       return `Manuel Estévez ${new Date().getFullYear()}`
-    }
-  },
-  methods: {
-    ...mapActions('moviesList', [
-      'getMoviesListLive',
-      'resetMovieListData'
-    ]),
-    saveSearch (event) {
-      this.searchInput = event
-    },
-    launchSearch () {
-      this.resetMovieListData()
-      this.getMoviesListLive({
-        query: this.searchInput
-      })
-      this.$router.push(`/search?q=${this.searchInput}`)
     }
   }
 }
