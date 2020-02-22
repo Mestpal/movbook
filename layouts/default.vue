@@ -1,8 +1,6 @@
 <template>
   <v-app dark>
     <v-app-bar
-      :clipped-left="clipped"
-      fixed
       app
     >
       <v-btn
@@ -13,6 +11,14 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-toolbar-items>
+        <v-text-field
+          label="Search"
+          outlined
+          @input="saveSearch($event)"
+          @keypress.enter="launchSearch"
+        ></v-text-field>
+      </v-toolbar-items>
     </v-app-bar>
     <v-content>
       <v-container grid-list-xl>
@@ -20,7 +26,6 @@
       </v-container>
     </v-content>
     <v-footer
-      :fixed="fixed"
       app
     >
       <span>&copy; {{ footerText }} </span>
@@ -29,15 +34,34 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   data () {
     return {
-      title: 'Movbook'
+      title: 'Movbook',
+      searchInput: ''
     }
   },
   computed: {
     footerText () {
       return `Manuel Estévez ${new Date().getFullYear()}`
+    }
+  },
+  methods: {
+    ...mapActions('moviesList', [
+      'getMoviesListLive',
+      'resetMovieListData'
+    ]),
+    saveSearch (event) {
+      this.searchInput = event
+    },
+    launchSearch () {
+      this.resetMovieListData()
+      this.getMoviesListLive({
+        query: this.searchInput
+      })
+      this.$router.push(`/search?q=${this.searchInput}`)
     }
   }
 }
