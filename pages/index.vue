@@ -49,7 +49,7 @@ export default {
     },
     openSection (event) {
       this.updateSelectedGenre(event)
-      this.$router.push(`${event.name.toLowerCase()}/${event.id}`)
+      this.$router.push(`section/${event.name.toLowerCase()}/${event.id}`)
     }
   },
   beforeMount () {
