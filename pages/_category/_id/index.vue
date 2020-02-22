@@ -34,7 +34,7 @@ import categoryListLoader from '@/components/loaders/categoryListLoader'
 export default {
   data () {
     return {
-      isLoading: true
+      isLoading: false
     }
   },
   components: {
@@ -89,10 +89,14 @@ export default {
     },
     checkMoviesListStatus () {
       if (!this.moviesList.length) {
+        this.isLoading = true
         this.getMoviesList({
           genreId: this.$route.params.id,
           page: 1
         })
+          .then(() => {
+            this.isLoading = false
+          })
       }
     },
     intersected () {
