@@ -49,7 +49,7 @@ export default {
     ...mapGetters('movieDBConfig', [
       'configuration'
     ]),
-    ...mapGetters('movieGenres', [
+    ...mapGetters('moviesGenre', [
       'selectedGenre'
     ]),
     ...mapGetters('infiniteLoad', [
@@ -68,7 +68,7 @@ export default {
       'getMoviesList',
       'resetMovieListData'
     ]),
-    ...mapActions('movieGenres', [
+    ...mapActions('moviesGenre', [
       'updateSelectedGenre'
     ]),
     ...mapActions('infiniteLoad', [

@@ -19,7 +19,7 @@ export default {
     Category
   },
   computed: {
-    ...mapGetters('movieGenres', [
+    ...mapGetters('moviesGenre', [
       'genres'
     ]),
     ...mapGetters('movieDBConfig', [
@@ -30,7 +30,7 @@ export default {
     ...mapActions('movieDBConfig', [
       'getMovieDBConfig'
     ]),
-    ...mapActions('movieGenres', [
+    ...mapActions('moviesGenre', [
       'getFilmGenres',
       'updateSelectedGenre'
     ]),
