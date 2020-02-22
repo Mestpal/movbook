@@ -7,9 +7,9 @@
     >
       <v-btn
         icon
-        @click.stop="miniVariant = !miniVariant"
+        @click="$router.push('/')"
       >
-        <v-icon>mdi-chevron-left</v-icon>
+        <v-icon>mdi-home</v-icon>
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
