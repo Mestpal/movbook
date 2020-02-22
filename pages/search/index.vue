@@ -1,0 +1,47 @@
+<template>
+  <v-layout
+    row
+    :key="reloadKey"
+  >
+    <v-flex>
+      <div>
+        <h1 v-text="'Results'" />
+      </div>
+      <contentsGrid
+        :configuration="configuration"
+        :contentsList="moviesList"
+      />
+    </v-flex>
+  </v-layout>
+</template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex'
+import contentsGrid from '@/components/grids/contentsGrid'
+
+export default {
+  components: {
+    contentsGrid
+  },
+  computed: {
+    ...mapGetters('moviesList', [
+      'moviesList'
+    ]),
+    ...mapGetters('movieDBConfig', [
+      'configuration'
+    ])
+  },
+  mounted () {
+    if (!this.moviesList.lenght) {
+      this.getMoviesListLive({
+        query: this.$route.query.q
+      })
+    }
+  },
+  methods: {
+    ...mapActions('moviesList', [
+      'getMoviesListLive'
+    ])
+  }
+}
+</script>
