@@ -1,6 +1,6 @@
 import { mutations, getters, actions } from '@/store/infiniteLoad'
 
-describe('colorManager.js', () => {
+describe('infiniteLoad.js', () => {
   const state = {
     page: 1
   }
