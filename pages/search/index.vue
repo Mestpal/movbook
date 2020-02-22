@@ -1,7 +1,6 @@
 <template>
   <v-layout
     row
-    :key="reloadKey"
   >
     <v-flex>
       <div>
