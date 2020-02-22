@@ -6,18 +6,10 @@
       <div>
         <h1 v-text="categoryTitle"/>
       </div>
-      <v-layout
-        row
-        justify-space-between
-      >
-        <MoviesListElement
-          v-for="(movie, index) in moviesList"
-          :key="index"
-          :data="movie"
-          :imgBase="configuration.images.base_url + configuration.images.poster_sizes[4]"
-          @prepareContent="openContent($event)"
-        />
-      </v-layout>
+      <contentsGrid
+        :configuration="configuration"
+        :contentsList="moviesList"
+      />
       <observer @intersect="intersected" />
       <categoryListLoader v-if="isLoading"/>
     </v-flex>
@@ -27,7 +19,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import MoviesListElement from '@/components/cards/content'
+import contentsGrid from '@/components/grids/contentsGrid'
 import observer from '@/components/atomics/observer'
 import categoryListLoader from '@/components/loaders/categoryListLoader'
 
@@ -38,7 +30,7 @@ export default {
     }
   },
   components: {
-    MoviesListElement,
+    contentsGrid,
     observer,
     categoryListLoader
   },
@@ -74,9 +66,6 @@ export default {
     ...mapActions('infiniteLoad', [
       'updatePage'
     ]),
-    openContent (id) {
-      this.$router.push(`movie/${id}`)
-    },
     checkPageStatus () {
       if (this.selectedGenre !== this.$route.params.id) {
         this.resetMovieListData()
