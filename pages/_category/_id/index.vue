@@ -19,6 +19,7 @@
         />
       </v-layout>
       <observer @intersect="intersected" />
+      <categoryListLoader v-if="isLoading"/>
     </v-flex>
   </v-layout>
 </template>
@@ -28,11 +29,18 @@ import { mapGetters, mapActions } from 'vuex'
 
 import MoviesListElement from '@/components/cards/content'
 import observer from '@/components/atomics/observer'
+import categoryListLoader from '@/components/loaders/categoryListLoader'
 
 export default {
+  data () {
+    return {
+      isLoading: true
+    }
+  },
   components: {
     MoviesListElement,
-    observer
+    observer,
+    categoryListLoader
   },
   computed: {
     ...mapGetters('moviesList', [
@@ -90,10 +98,14 @@ export default {
     intersected () {
       const newPage = this.page + 1
       this.updatePage(newPage)
+      this.isLoading = true
       this.getMoviesList({
         genreId: this.$route.params.id,
         page: this.page
       })
+        .then(() => {
+          this.isLoading = false
+        })
     }
   }
 }
