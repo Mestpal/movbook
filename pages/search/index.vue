@@ -7,6 +7,7 @@
         <h1 v-text="'Results'" />
       </div>
       <contentsGrid
+        :key="query"
         :configuration="configuration"
         :contentsList="moviesList"
       />
@@ -28,10 +29,13 @@ export default {
     ]),
     ...mapGetters('movieDBConfig', [
       'configuration'
-    ])
+    ]),
+    query () {
+      return this.$route.query.q
+    }
   },
   mounted () {
-    if (!this.moviesList.lenght) {
+    if (!this.moviesList.lenght || (this.oldQuery !== this.$route.query.q)) {
       this.getMoviesListLive({
         query: this.$route.query.q
       })
@@ -39,8 +43,17 @@ export default {
   },
   methods: {
     ...mapActions('moviesList', [
-      'getMoviesListLive'
+      'getMoviesListLive',
+      'resetMovieListData'
     ])
+  },
+  watch: {
+    query (newValue) {
+      this.resetMovieListData()
+      this.getMoviesListLive({
+        query: newValue
+      })
+    }
   }
 }
 </script>

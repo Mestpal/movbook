@@ -2,6 +2,7 @@
   <v-text-field
     label="Search"
     outlined
+    single-line
     @input="saveSearch($event)"
     @keypress.enter="launchSearch"
   />
@@ -30,6 +31,7 @@ export default {
         query: this.searchInput
       })
       this.$router.push(`/search?q=${this.searchInput}`)
+      this.searchInput = ''
     }
   }
 }
