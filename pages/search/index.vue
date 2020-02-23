@@ -9,8 +9,8 @@
       <contentsGrid
         :key="query"
         :configuration="configuration"
-        :contentsList="moviesList"
-        :liveSearch="true"
+        :contents-list="moviesList"
+        :live-search="true"
       />
     </v-flex>
   </v-layout>
@@ -35,12 +35,6 @@ export default {
       return this.$route.query.q
     }
   },
-  methods: {
-    ...mapActions('moviesList', [
-      'getMoviesListLive',
-      'resetMovieListData'
-    ])
-  },
   watch: {
     query (newValue) {
       this.resetMovieListData()
@@ -49,6 +43,12 @@ export default {
         page: 1
       })
     }
+  },
+  methods: {
+    ...mapActions('moviesList', [
+      'getMoviesListLive',
+      'resetMovieListData'
+    ])
   }
 }
 </script>

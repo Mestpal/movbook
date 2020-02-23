@@ -4,7 +4,7 @@
   >
     <v-flex>
       <div>
-        <h1 v-text="categoryTitle"/>
+        <h1 v-text="categoryTitle" />
       </div>
       <contentsGrid />
     </v-flex>

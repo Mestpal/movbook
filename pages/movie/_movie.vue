@@ -1,27 +1,27 @@
 <template>
-    <v-container fluid>
-      <v-row justify-space-between>
-        <v-col
-          cols="4"
+  <v-container fluid>
+    <v-row justify-space-between>
+      <v-col
+        cols="4"
+      >
+        <v-card
+          :class="'repeating-gradient'"
+          color="transparent"
         >
-          <v-card
-            :class="'repeating-gradient'"
-            color="transparent"
-          >
-            <v-img
-              :src="imageSrc"
-            />
-          </v-card>
-        </v-col>
-        <v-col
-          cols="8"
-        >
-          <contentDescription
-            :contentData="movieData"
+          <v-img
+            :src="imageSrc"
           />
-        </v-col>
-      </v-row>
-    </v-container>
+        </v-card>
+      </v-col>
+      <v-col
+        cols="8"
+      >
+        <contentDescription
+          :content-data="movieData"
+        />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -48,6 +48,9 @@ export default {
       return ''
     }
   },
+  mounted () {
+    this.getMovieData()
+  },
   methods: {
     async getMovieData () {
       await this.$axios.get(`https://api.themoviedb.org/3/movie/${this.$route.params.movie}?api_key=059b24ced08b9601d550dc1bda480265&language=en-US`)
@@ -55,9 +58,6 @@ export default {
           this.movieData = result.data
         })
     }
-  },
-  mounted () {
-    this.getMovieData()
   }
 }
 </script>

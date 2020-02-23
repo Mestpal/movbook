@@ -4,7 +4,7 @@
       class="category"
       @click="$emit('section', data)"
     >
-      <h2 v-text='data.name'/>
+      <h2 v-text="data.name" />
     </div>
   </div>
 </template>

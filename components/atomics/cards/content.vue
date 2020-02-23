@@ -7,9 +7,9 @@
     xl3
   >
     <v-card
+      color="transparent"
       :class="'fill-height repeating-gradient'"
       @click="$emit('prepareContent', data.id)"
-      color="transparent"
     >
       <v-img
         :src="imageSrc"
@@ -24,14 +24,6 @@
 
 <script>
 export default {
-  computed: {
-    imageSrc () {
-      if (this.imgBase && this.data.poster_path) {
-        return this.imgBase + this.data.poster_path
-      }
-      return ''
-    }
-  },
   props: {
     data: {
       type: Object,
@@ -41,6 +33,14 @@ export default {
     imgBase: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    imageSrc () {
+      if (this.imgBase && this.data.poster_path) {
+        return this.imgBase + this.data.poster_path
+      }
+      return ''
     }
   }
 }

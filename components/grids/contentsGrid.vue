@@ -7,11 +7,11 @@
       v-for="(movie, index) in moviesList"
       :key="index"
       :data="movie"
-      :imgBase="configuration.images.base_url + configuration.images.poster_sizes[4]"
+      :img-base="configuration.images.base_url + configuration.images.poster_sizes[4]"
       @prepareContent="openContent($event)"
     />
     <observer @intersect="intersected" />
-    <categoryListLoader v-if="isLoading"/>
+    <categoryListLoader v-if="isLoading" />
   </v-layout>
 </template>
 
@@ -28,15 +28,15 @@ export default {
     observer,
     categoryListLoader
   },
-  data () {
-    return {
-      isLoading: false
-    }
-  },
   props: {
     liveSearch: {
       type: Boolean,
       default: false
+    }
+  },
+  data () {
+    return {
+      isLoading: false
     }
   },
   computed: {

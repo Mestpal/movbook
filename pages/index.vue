@@ -3,8 +3,8 @@
     <Category
       v-for="(genre, index) in genres"
       :key="index"
-      :data='genre'
-      @section='openSection($event)'
+      :data="genre"
+      @section="openSection($event)"
     />
   </div>
 </template>
@@ -25,6 +25,13 @@ export default {
     ...mapGetters('movieDBConfig', [
       'configuration'
     ])
+  },
+  beforeMount () {
+    this.resetMovieListData()
+    this.checkConfiguration()
+  },
+  mounted () {
+    this.checkGenresStatus()
   },
   methods: {
     ...mapActions('movieDBConfig', [
@@ -51,13 +58,6 @@ export default {
       this.updateSelectedGenre(event)
       this.$router.push(`section/${event.name.toLowerCase()}/${event.id}`)
     }
-  },
-  beforeMount () {
-    this.resetMovieListData()
-    this.checkConfiguration()
-  },
-  mounted () {
-    this.checkGenresStatus()
   }
 }
 </script>

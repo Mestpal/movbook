@@ -32,13 +32,13 @@
 import search from '@/components/atomics/search'
 
 export default {
+  components: {
+    search
+  },
   data () {
     return {
       title: 'Movbook'
     }
-  },
-  components: {
-    search
   },
   computed: {
     footerText () {
