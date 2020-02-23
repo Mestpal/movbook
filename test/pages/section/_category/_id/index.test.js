@@ -32,8 +32,6 @@ describe('section category id index.vue page', () => {
   })
 
   it('reders the page', () => {
-    // wrapper.vm.updateSelectedGenre = jest.fn()
-    // wrapper.vm.categoryTitle = jest.fn()
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
