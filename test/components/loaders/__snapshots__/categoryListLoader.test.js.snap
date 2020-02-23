@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`categoryListLoader.vue reders the categoryListLoader component 1`] = `
+"<v-row-stub tag=\\"div\\">
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+  <cardload-stub></cardload-stub>
+</v-row-stub>"
+`;
