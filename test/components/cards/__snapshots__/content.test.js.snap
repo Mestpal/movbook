@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`content.vue reders the content component 1`] = `
+"<div class=\\"flex xs12 sm6 md4 lg3 xl3\\">
+  <div tabindex=\\"0\\" class=\\"v-card v-card--link v-sheet theme--light transparent fill-height repeating-gradient\\">
+    <div class=\\"v-responsive v-image\\">
+      <div class=\\"v-image__image v-image__image--preload v-image__image--cover\\" style=\\"background-position: center center;\\"></div>
+      <div class=\\"v-responsive__content\\">
+        <div class=\\"v-card__title\\"></div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

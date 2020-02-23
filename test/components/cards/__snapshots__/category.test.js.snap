@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`category.vue reders the category component 1`] = `
+"<div>
+  <div class=\\"category\\">
+    <h2>animation</h2>
+  </div>
+</div>"
+`;
