@@ -3,36 +3,97 @@
     row
     justify-space-between
   >
-    <ContentsListElement
-      v-for="(movie, index) in contentsList"
+    <contentsListElement
+      v-for="(movie, index) in moviesList"
       :key="index"
       :data="movie"
       :imgBase="configuration.images.base_url + configuration.images.poster_sizes[4]"
       @prepareContent="openContent($event)"
     />
+    <observer @intersect="intersected" />
+    <categoryListLoader v-if="isLoading"/>
   </v-layout>
 </template>
 
 <script>
-import ContentsListElement from '@/components/cards/content'
+import { mapGetters, mapActions } from 'vuex'
+
+import contentsListElement from '@/components/cards/content'
+import observer from '@/components/atomics/observer'
+import categoryListLoader from '@/components/loaders/categoryListLoader'
 
 export default {
   components: {
-    ContentsListElement
+    contentsListElement,
+    observer,
+    categoryListLoader
   },
-  props: {
-    contentsList: {
-      type: Array,
-      default: () => []
-    },
-    configuration: {
-      type: Object,
-      required: true
+  data () {
+    return {
+      isLoading: false
     }
   },
+  props: {
+    liveSearch: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    ...mapGetters('moviesList', [
+      'moviesList'
+    ]),
+    ...mapGetters('movieDBConfig', [
+      'configuration'
+    ]),
+    ...mapGetters('infiniteLoad', [
+      'page'
+    ])
+  },
+  mounted () {
+    this.checkMoviesListStatus()
+  },
   methods: {
+    ...mapActions('moviesList', [
+      'getMoviesList',
+      'getMoviesListLive',
+      'resetMovieListData'
+    ]),
+    ...mapActions('infiniteLoad', [
+      'updatePage'
+    ]),
     openContent (id) {
       this.$router.push(`/movie/${id}`)
+    },
+    intersected () {
+      console.log(this.page)
+      const newPage = this.page + 1
+      this.updatePage(newPage)
+      this.isLoading = true
+
+      if (!this.liveSearch) {
+        this.getMoviesList({
+          genreId: this.$route.params.id,
+          page: this.page
+        }).then(() => { this.isLoading = false })
+      } else {
+        this.getMoviesListLive({
+          query: this.$route.query.q,
+          page: this.page
+        }).then(() => { this.isLoading = false })
+      }
+    },
+    checkMoviesListStatus () {
+      if (!this.moviesList.length) {
+        this.isLoading = true
+        this.getMoviesList({
+          genreId: this.$route.params.id,
+          page: 1
+        })
+          .then(() => {
+            this.isLoading = false
+          })
+      }
     }
   }
 }

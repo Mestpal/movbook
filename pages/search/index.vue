@@ -10,6 +10,7 @@
         :key="query"
         :configuration="configuration"
         :contentsList="moviesList"
+        :liveSearch="true"
       />
     </v-flex>
   </v-layout>
@@ -34,13 +35,6 @@ export default {
       return this.$route.query.q
     }
   },
-  mounted () {
-    if (!this.moviesList.lenght || (this.oldQuery !== this.$route.query.q)) {
-      this.getMoviesListLive({
-        query: this.$route.query.q
-      })
-    }
-  },
   methods: {
     ...mapActions('moviesList', [
       'getMoviesListLive',
@@ -51,7 +45,8 @@ export default {
     query (newValue) {
       this.resetMovieListData()
       this.getMoviesListLive({
-        query: newValue
+        query: newValue,
+        page: 1
       })
     }
   }

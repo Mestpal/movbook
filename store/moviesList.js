@@ -21,7 +21,7 @@ export const actions = {
     commit('UPDATE_MOVIE_LIST', response.data.results)
   },
   async getMoviesListLive ({ commit }, data) {
-    const response = await this.$axios.get(`https://api.themoviedb.org/3/search/movie?api_key=059b24ced08b9601d550dc1bda480265&language=en-US&query=${data.query}&page=1&include_adult=false`)
+    const response = await this.$axios.get(`https://api.themoviedb.org/3/search/movie?api_key=059b24ced08b9601d550dc1bda480265&language=en-US&query=${data.query}&page=${data.page}&include_adult=false`)
     commit('UPDATE_MOVIE_LIST', response.data.results)
   },
   resetMovieListData ({ commit }) {
