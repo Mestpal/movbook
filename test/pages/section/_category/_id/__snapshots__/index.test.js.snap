@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`section category id index.vue page reders the page 1`] = `
+"<v-layout-stub tag=\\"div\\" row=\\"\\">
+  <v-flex-stub tag=\\"div\\">
+    <div>
+      <h1>TEST</h1>
+    </div>
+    <contentsgrid-stub></contentsgrid-stub>
+  </v-flex-stub>
+</v-layout-stub>"
+`;
