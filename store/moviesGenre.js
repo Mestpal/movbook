@@ -1,3 +1,5 @@
+import config from '@/config/api'
+
 export const state = {
   genres: [],
   selectedGenre: {}
@@ -19,7 +21,7 @@ export const mutations = {
 
 export const actions = {
   async getFilmGenres ({ commit }) {
-    const response = await this.$axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=059b24ced08b9601d550dc1bda480265&language=en-US')
+    const response = await this.$axios.get(`${config.api.url}/genre/movie/list?api_key=${config.api.apikey}&language=en-US`)
     commit('UPDATE_GENRES', response.data.genres)
   },
   updateSelectedGenre ({ commit }, data) {

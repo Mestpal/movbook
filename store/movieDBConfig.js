@@ -1,3 +1,5 @@
+import config from '@/config/api'
+
 export const state = {
   configuration: {}
 }
@@ -14,7 +16,7 @@ export const mutations = {
 
 export const actions = {
   async getMovieDBConfig ({ commit }) {
-    const response = await this.$axios.get('https://api.themoviedb.org/3/configuration?api_key=059b24ced08b9601d550dc1bda480265')
+    const response = await this.$axios.get(`${config.api.url}/configuration?api_key=${config.api.apikey}`)
     commit('UPDATE_CONFIGURATION', response.data)
   }
 }
