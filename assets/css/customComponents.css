@@ -1,6 +1,6 @@
 .category {
     color:black;
-    background-color:whitesmoke;
+    background-color:rgb(255, 255, 255);
     width: 28.3%;
     min-width:200px;
     height: auto;
@@ -12,8 +12,8 @@
 }
 
 .category:hover{
-    color: white;
-    background-color: orange;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 174, 24);
 }
 
 .movieListElement {

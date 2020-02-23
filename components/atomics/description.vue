@@ -27,27 +27,34 @@
           v-if="contentData.original_language"
           v-text="`Original language: ${contentData.original_language}`"
         />
-        <li> Genres: </li>
-        <ul
-          class="contentListSecondLevel"
+        <span
+          v-if="contentData.genres && contentData.genres.length"
         >
-          <li
-            v-for="(genre, index) in contentData.genres"
-            :key="index"
-            v-text="genre.name"
-          />
-        </ul>
-        <li> Production companies: </li>
-        <ul
+          <li> Genres: </li>
+          <ul
+            class="contentListSecondLevel"
+          >
+            <li
+              v-for="(genre, index) in contentData.genres"
+              :key="index"
+              v-text="genre.name"
+            />
+          </ul>
+        </span>
+        <span
           v-if="contentData.production_companies && contentData.production_companies.length"
-          class="contentListSecondLevel"
         >
-          <li
-            v-for="(company, index) in contentData.production_companies"
-            :key="index"
-            v-text="company.name"
-          />
-        </ul>
+          <li> Production companies: </li>
+          <ul
+            class="contentListSecondLevel"
+          >
+            <li
+              v-for="(company, index) in contentData.production_companies"
+              :key="index"
+              v-text="company.name"
+            />
+          </ul>
+        </span>
         <li
           v-if="contentData.overview"
         >
