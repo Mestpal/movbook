@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cardLoad.vue reders the cardLoad 1`] = `
+"<div class=\\"flex xs12 sm6 md4 lg3 xl3\\">
+  <div aria-busy=\\"true\\" aria-live=\\"polite\\" role=\\"alert\\" class=\\"v-skeleton-loader v-skeleton-loader--is-loading theme--light\\">
+    <div class=\\"v-skeleton-loader__card v-skeleton-loader__bone\\">
+      <div class=\\"v-skeleton-loader__image v-skeleton-loader__bone\\"></div>
+      <div class=\\"v-skeleton-loader__card-heading v-skeleton-loader__bone\\">
+        <div class=\\"v-skeleton-loader__heading v-skeleton-loader__bone\\"></div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

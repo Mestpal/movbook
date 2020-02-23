@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`description.vue reders the description component 1`] = `
+"<div class=\\"v-card v-sheet theme--light\\">
+  <div class=\\"v-card__text\\">
+    <ul class=\\"contentDescription\\">
+      <li>
+        <h1>The Big Bus</h1>
+      </li>
+      <!---->
+      <li>Original title: The Big Bus</li>
+      <li>Release date: 1976-06-23</li>
+      <li>Original language: en</li>
+      <li> Genres: </li>
+      <ul class=\\"contentListSecondLevel\\">
+        <li>Action</li>
+        <li>Comedy</li>
+      </ul>
+      <li> Production companies: </li>
+      <ul class=\\"contentListSecondLevel\\">
+        <li>Paramount</li>
+      </ul>
+      <li>
+        <h2>Overview</h2>
+        <p>The ultimate disaster film parody. A nuclear powered bus is making it's maiden non-stop trip from New York to Denver. The journey is plagued by disasters due to the machinations of a mysterious group allied with the oil lobby. Will the down on his luck driver, with a reputation for eating his passengers, be able to complete the journey?</p>
+      </li>
+      <li>
+        <h2>Vote average</h2>
+        <p>5.3</p>
+      </li>
+    </ul>
+  </div>
+</div>"
+`;

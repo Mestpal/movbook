@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search.vue reders the search component correctly 1`] = `
+"<div class=\\"v-input theme--light v-text-field v-text-field--single-line v-text-field--enclosed v-text-field--outlined\\">
+  <div class=\\"v-input__control\\">
+    <div class=\\"v-input__slot\\">
+      <fieldset aria-hidden=\\"true\\">
+        <legend><span>​</span></legend>
+      </fieldset>
+      <div class=\\"v-text-field__slot\\"><label for=\\"input-2\\" class=\\"v-label theme--light\\" style=\\"right: 0px; position: absolute;\\">Search</label><input id=\\"input-2\\" type=\\"text\\"></div>
+    </div>
+    <div class=\\"v-text-field__details\\">
+      <div class=\\"v-messages theme--light\\">
+        <div class=\\"v-messages__wrapper\\"></div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
