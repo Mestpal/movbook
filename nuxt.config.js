@@ -17,6 +17,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    apikey: process.env.API_KEY || ''
+  },
   /*
   ** Customize the progress-bar color
   */

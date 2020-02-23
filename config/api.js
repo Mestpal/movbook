@@ -1,6 +1,6 @@
 export default {
   api: {
     url: 'https://api.themoviedb.org/3',
-    apikey: ''
+    apikey: process.env.apikey
   }
 }
