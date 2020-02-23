@@ -4,7 +4,7 @@ import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import { mount, createLocalVue } from '@vue/test-utils'
 
-import category from '@/components/cards/category'
+import category from '@/components/atomics/cards/category'
 
 Vue.use(Vuetify)
 Vue.use(Vuex)

@@ -18,7 +18,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import contentsListElement from '@/components/cards/content'
+import contentsListElement from '@/components/atomics/cards/content'
 import observer from '@/components/atomics/observer'
 import categoryListLoader from '@/components/loaders/categoryListLoader'
 

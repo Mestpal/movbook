@@ -12,7 +12,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Category from '@/components/cards/category'
+import Category from '@/components/atomics/cards/category'
 
 export default {
   components: {
