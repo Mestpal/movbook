@@ -66,7 +66,6 @@ export default {
       this.$router.push(`/movie/${id}`)
     },
     intersected () {
-      console.log(this.page)
       const newPage = this.page + 1
       this.updatePage(newPage)
       this.isLoading = true
