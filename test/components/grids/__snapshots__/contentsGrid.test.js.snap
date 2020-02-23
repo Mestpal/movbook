@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contentsGrid.vue component reders the page 1`] = `
+"<v-layout-stub tag=\\"div\\" row=\\"\\" justify-space-between=\\"\\">
+  <observer-stub></observer-stub>
+  <!---->
+</v-layout-stub>"
+`;
