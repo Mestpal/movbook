@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_movie index.vue page reders the page 1`] = `
+"<div class=\\"container container--fluid\\" moviedata=\\"[object Object]\\">
+  <div justify-space-between=\\"\\" class=\\"row\\">
+    <div class=\\"col col-4\\">
+      <div class=\\"v-card v-sheet theme--light transparent repeating-gradient\\">
+        <div class=\\"v-responsive v-image\\">
+          <div class=\\"v-responsive__content\\"></div>
+        </div>
+      </div>
+    </div>
+    <div class=\\"col col-8\\">
+      <div class=\\"v-card v-sheet theme--light\\">
+        <div class=\\"v-card__text\\">
+          <ul class=\\"contentDescription\\">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <li> Genres: </li>
+            <ul class=\\"contentListSecondLevel\\"></ul>
+            <li> Production companies: </li>
+            <!---->
+            <!---->
+            <li>
+              <h2>Vote average</h2>
+              <p></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
