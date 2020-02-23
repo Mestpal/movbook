@@ -2,6 +2,8 @@
 
 App using [Nuxt](https://nuxtjs.org/guide#what-is-nuxtjs-) and [The Movie DB API](https://www.themoviedb.org/documentation/api?language=en-US) to create a test e-comerce project
 
+**You can check this project in a test enviroment clicking** [here](https://movbook.herokuapp.com/)
+
 ## Technologies
 
 Nuxt is a framework that follows the VUE guidelines and include the following tools to archieve that:
