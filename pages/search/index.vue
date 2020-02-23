@@ -2,7 +2,9 @@
   <v-layout
     row
   >
-    <v-flex>
+    <v-flex
+      v-if="moviesList.length"
+    >
       <div>
         <h1 v-text="'Results'" />
       </div>
@@ -13,6 +15,11 @@
         :live-search="true"
       />
     </v-flex>
+    <v-row v-else>
+      <v-flex>
+        <h1> No results found</h1>
+      </v-flex>
+    </v-row>
   </v-layout>
 </template>
 
