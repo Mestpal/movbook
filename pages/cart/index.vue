@@ -3,7 +3,7 @@
     row
     justify-space-between
   >
-    <v-row
+    <v-flex
       v-if="cartItems.length"
     >
       <contentsListElement
@@ -19,12 +19,10 @@
         @modalAgree="agreeModalButtonAction"
         @modalCancel="cancelModalButtonAction"
       />
-    </v-row>
-    <v-row v-else>
-      <v-flex>
-        <h1> Your cart is empty</h1>
-      </v-flex>
-    </v-row>
+    </v-flex>
+    <v-flex v-else>
+      <h1> Your cart is empty</h1>
+    </v-flex>
   </v-layout>
 </template>
 
