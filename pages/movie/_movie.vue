@@ -4,6 +4,19 @@
       <v-col
         cols="4"
       >
+        <v-btn
+          big
+          color="primary"
+          :disabled="disabled"
+          v-text="button.text"
+          @click="addToCart"
+        />
+      </v-col>
+    </v-row>
+    <v-row justify-space-between>
+      <v-col
+        cols="4"
+      >
         <v-card
           :class="'repeating-gradient'"
           color="transparent"
@@ -25,7 +38,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import contentDescription from '@/components/atomics/description'
 
 export default {
@@ -34,7 +47,11 @@ export default {
   },
   data () {
     return {
-      movieData: {}
+      movieData: {},
+      disabled: false,
+      button: {
+        text: 'Add to cart'
+      }
     }
   },
   computed: {
@@ -52,11 +69,19 @@ export default {
     this.getMovieData()
   },
   methods: {
+    ...mapActions('cartStatus', [
+      'addItemToCart'
+    ]),
     async getMovieData () {
       await this.$axios.get(`https://api.themoviedb.org/3/movie/${this.$route.params.movie}?api_key=059b24ced08b9601d550dc1bda480265&language=en-US`)
         .then((result) => {
           this.movieData = result.data
         })
+    },
+    addToCart () {
+      this.disabled = true
+      this.button.text = 'Added'
+      this.addItemToCart(this.movieData)
     }
   }
 }
