@@ -22,17 +22,17 @@ The main navigation in in three levels:
 
 - A main page where you can see all the available movies genres.
   ![movbook1](https://raw.githubusercontent.com/Mestpal/movbook/master/assets/images/movbook1.png)
-  
+
 - After click in a genre, you will see all the movies available for that genre, sort by the original title.
   ![movbook2](https://raw.githubusercontent.com/Mestpal/movbook/master/assets/images/movbook2.png)
-  
+
 - If you click in a movie you will see the details page of that movie
 
-To make it easy the search of a certain film, a search component in the tool-bar allows you to make a custom search
+To make it easy the search of a certain film, a **search component** in the tool-bar allows you to make a custom search
 
-A infinite scroll was added to load the movies available for a genre or search, thanks to this the load is made progresively.
+A **infinite scroll** was added to load the movies available for a genre or search, thanks to this the load is made progresively.
 
-Also a cart system was added, you can add films to the cart clicking the button in the page where the movie details are shown. To access to the cart you only need to click the cart icon in the tool-bar
+Also a **cart system** was added, you can add films to the cart clicking the button in the page where the movie details are shown. To access to the cart you only need to click the cart icon in the tool-bar
 
 ## Build Setup
 
