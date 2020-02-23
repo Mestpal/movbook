@@ -5,10 +5,20 @@
     >
       <v-btn
         icon
+        dense
         @click="$router.push('/')"
       >
         <v-icon>mdi-home</v-icon>
       </v-btn>
+      <v-btn
+        icon
+        dense
+        @click="$router.push('/cart')"
+      >
+        <v-icon>mdi-cart</v-icon>
+      </v-btn>
+      <span v-text="''"/>
+      <v-spacer />
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-toolbar-items>
