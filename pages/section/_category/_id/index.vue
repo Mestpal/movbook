@@ -29,8 +29,6 @@ export default {
     }
   },
   mounted () {
-    this.checkPageStatus()
-
     this.updateSelectedGenre({
       id: this.$route.params.id,
       name: this.$route.params.category
@@ -45,13 +43,7 @@ export default {
     ]),
     ...mapActions('infiniteLoad', [
       'updatePage'
-    ]),
-    checkPageStatus () {
-      if (this.selectedGenre !== this.$route.params.id) {
-        this.resetMovieListData()
-        this.updatePage(1)
-      }
-    }
+    ])
   }
 }
 </script>

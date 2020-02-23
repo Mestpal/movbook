@@ -56,8 +56,7 @@ export default {
   methods: {
     ...mapActions('moviesList', [
       'getMoviesList',
-      'getMoviesListLive',
-      'resetMovieListData'
+      'getMoviesListLive'
     ]),
     ...mapActions('infiniteLoad', [
       'updatePage'
