@@ -17,7 +17,7 @@
       >
         <v-icon>mdi-cart</v-icon>
       </v-btn>
-      <span v-text="''"/>
+      <span v-text="cartItems.length"/>
       <v-spacer />
       <v-toolbar-title v-text="title" />
       <v-spacer />
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import search from '@/components/atomics/search'
 
 export default {
@@ -51,6 +53,9 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('cartStatus', [
+      'cartItems'
+    ]),
     footerText () {
       return `Manuel Estévez ${new Date().getFullYear()}`
     }
