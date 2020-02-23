@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import cardLoad from '@/components/atomics/cardLoad'
+import cardLoad from '@/components/atomics/loaders/cardLoad'
 
 export default {
   components: {
